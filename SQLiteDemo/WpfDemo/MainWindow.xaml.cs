@@ -28,6 +28,8 @@ namespace WpfDemo
             InitializeComponent();
         }
 
+        private SQLiteConnection conn = new SQLiteConnection();
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -37,22 +39,29 @@ namespace WpfDemo
                 builder["Data Source"] = dlg.FileName;
                 try
                 {
-                    using (SQLiteConnection conn = new SQLiteConnection(builder.ConnectionString))                    
-                    {
-                        conn.Open();
+                    conn.ConnectionString = builder.ConnectionString;
+                    conn.Open();
 
-                        //Get all tables in the database
-                        DataTable table = conn.GetSchema("Tables");                         
-                        TablesView.ItemsSource = table.AsEnumerable()
-                            .Select(s => s.Field<string>(table.Columns[2].ToString()))
-                            .ToArray<string>();
-                    }
+                    //Get all tables in the database
+                    DataTable table = conn.GetSchema("Tables");
+                    TablesView.ItemsSource = table.AsEnumerable()
+                        .Select(s => s.Field<string>(table.Columns[2].ToString()))
+                        .ToArray<string>();
                 }
-                catch(SQLiteException msg)
+                catch (SQLiteException msg)
                 {
                     MessageBox.Show(msg.Message);
-                }               
+                }
             }
+        }
+
+        private void TablesView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedText = e.AddedItems[0].ToString();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter("select * from " + selectedText,conn);
+            DataSet thisDataSet = new DataSet();
+            adapter.Fill(thisDataSet);
+            dataGrid.ItemsSource = thisDataSet.Tables[0].DefaultView;
         }
     }
 }

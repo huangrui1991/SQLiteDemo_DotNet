@@ -28,146 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.geometryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._4bandDataSet = new SQLiteDemo._4bandDataSet();
-            this.geometryTableAdapter = new SQLiteDemo._4bandDataSetTableAdapters.GeometryTableAdapter();
-            this.compactnessDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borderlengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borderindexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asymmetryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.objectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fillByToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.geometryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._4bandDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.listBox = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fillByToolStrip
+            // dataGridView
             // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(608, 25);
-            this.fillByToolStrip.TabIndex = 1;
-            this.fillByToolStrip.Text = "fillByToolStrip";
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowTemplate.Height = 23;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView.Size = new System.Drawing.Size(402, 344);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.VirtualMode = true;
             // 
-            // fillByToolStripButton
+            // splitContainer1
             // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(41, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // geometryBindingSource
+            // splitContainer1.Panel1
             // 
-            this.geometryBindingSource.DataMember = "Geometry";
-            this.geometryBindingSource.DataSource = this._4bandDataSet;
+            this.splitContainer1.Panel1.Controls.Add(this.listBox);
             // 
-            // _4bandDataSet
+            // splitContainer1.Panel2
             // 
-            this._4bandDataSet.DataSetName = "_4bandDataSet";
-            this._4bandDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView);
+            this.splitContainer1.Size = new System.Drawing.Size(608, 344);
+            this.splitContainer1.SplitterDistance = 202;
+            this.splitContainer1.TabIndex = 3;
             // 
-            // geometryTableAdapter
+            // listBox
             // 
-            this.geometryTableAdapter.ClearBeforeFill = true;
-            // 
-            // compactnessDataGridViewTextBoxColumn
-            // 
-            this.compactnessDataGridViewTextBoxColumn.DataPropertyName = "compactness";
-            this.compactnessDataGridViewTextBoxColumn.HeaderText = "compactness";
-            this.compactnessDataGridViewTextBoxColumn.Name = "compactnessDataGridViewTextBoxColumn";
-            // 
-            // borderlengthDataGridViewTextBoxColumn
-            // 
-            this.borderlengthDataGridViewTextBoxColumn.DataPropertyName = "border_length";
-            this.borderlengthDataGridViewTextBoxColumn.HeaderText = "border_length";
-            this.borderlengthDataGridViewTextBoxColumn.Name = "borderlengthDataGridViewTextBoxColumn";
-            // 
-            // borderindexDataGridViewTextBoxColumn
-            // 
-            this.borderindexDataGridViewTextBoxColumn.DataPropertyName = "border_index";
-            this.borderindexDataGridViewTextBoxColumn.HeaderText = "border_index";
-            this.borderindexDataGridViewTextBoxColumn.Name = "borderindexDataGridViewTextBoxColumn";
-            // 
-            // asymmetryDataGridViewTextBoxColumn
-            // 
-            this.asymmetryDataGridViewTextBoxColumn.DataPropertyName = "asymmetry";
-            this.asymmetryDataGridViewTextBoxColumn.HeaderText = "asymmetry";
-            this.asymmetryDataGridViewTextBoxColumn.Name = "asymmetryDataGridViewTextBoxColumn";
-            // 
-            // areaDataGridViewTextBoxColumn
-            // 
-            this.areaDataGridViewTextBoxColumn.DataPropertyName = "area";
-            this.areaDataGridViewTextBoxColumn.HeaderText = "area";
-            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
-            // 
-            // objectIDDataGridViewTextBoxColumn
-            // 
-            this.objectIDDataGridViewTextBoxColumn.DataPropertyName = "ObjectID";
-            this.objectIDDataGridViewTextBoxColumn.HeaderText = "ObjectID";
-            this.objectIDDataGridViewTextBoxColumn.Name = "objectIDDataGridViewTextBoxColumn";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.objectIDDataGridViewTextBoxColumn,
-            this.areaDataGridViewTextBoxColumn,
-            this.asymmetryDataGridViewTextBoxColumn,
-            this.borderindexDataGridViewTextBoxColumn,
-            this.borderlengthDataGridViewTextBoxColumn,
-            this.compactnessDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.geometryBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 319);
-            this.dataGridView1.TabIndex = 0;
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.ItemHeight = 12;
+            this.listBox.Location = new System.Drawing.Point(0, 0);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(202, 344);
+            this.listBox.TabIndex = 3;
+            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 344);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.geometryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._4bandDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private _4bandDataSet _4bandDataSet;
-        private System.Windows.Forms.BindingSource geometryBindingSource;
-        private _4bandDataSetTableAdapters.GeometryTableAdapter geometryTableAdapter;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compactnessDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borderlengthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borderindexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asymmetryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn objectIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ListBox listBox;
     }
 }
 

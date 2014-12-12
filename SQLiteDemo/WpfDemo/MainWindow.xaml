@@ -5,9 +5,11 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="TablesView" Grid.Column="0"></ListView>
-        <DataGrid Grid.Column="1"></DataGrid>
+        <GridSplitter Grid.Column ="0" Width="5"
+                HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+        <ListView x:Name="TablesView" Grid.Column="0" SelectionChanged="TablesView_SelectionChanged" SelectionMode="Single" Margin="3"></ListView>
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Margin="3" IsReadOnly="True" SelectionMode="Single" SelectionUnit="Cell" EnableColumnVirtualization="True"></DataGrid>
     </Grid>
 </Window>
